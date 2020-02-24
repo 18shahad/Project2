@@ -40,7 +40,7 @@
 
 .scrollable {
   border: 2px dotted black;
-  height: 300px;
+  height: 500px;
   overflow-y: scroll;
   width: 300px;
 }
@@ -75,7 +75,7 @@ p {
 
 /* Style buttons */
 .btn {
-  background-color: orange; /* Blue background */
+  background-color: rgb(221, 160, 189); /* Blue background */
   border: none; /* Remove borders */
   color: white; /* White text */
   cursor: pointer; /* Mouse pointer on hover */
