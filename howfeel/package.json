@@ -1,6 +1,7 @@
 {
   "name": "howfeel",
   "version": "0.1.0",
+  "homepage":  "http://18shahad.github.io/Project2/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -33,3 +34,5 @@
     ]
   }
 }
+
+
