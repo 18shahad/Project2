@@ -12,8 +12,7 @@ export default class Items extends React.Component {
     if (this.props.show === 'all')
     {
      allFeeling = this.props.feelingList.map((feel, index)=>{
-        return <SingleItem newFeel={feel} index={index} key={index} editFunc={this.props.editFunc} delFunc={this.props.delFunc} favFunc={this.props.favFunc}/>;
-        // return <SingleItem newFeel={feel} index={index} key={index} editFunc={this.editFunc()}/>;
+        return <SingleItem checkedList={this.props.checkedList} newFeel={feel} index={index} key={index} editFunc={this.props.editFunc} delFunc={this.props.delFunc} favFunc={this.props.favFunc}/>;
 
       });
     }
@@ -22,7 +21,7 @@ export default class Items extends React.Component {
     {
 
        allFeeling = this.props.favList.map((feel, index)=>{
-        return <SingleItem newFeel={feel} index={index} key={index} editFunc={this.props.editFunc} delFunc={this.props.delFunc} favFunc={this.props.favFunc}/>;
+        return <SingleItem checkedList={this.props.checkedList} newFeel={feel} index={index} key={index} editFunc={this.props.editFunc} delFunc={this.props.delFunc} favFunc={this.props.favFunc}/>;
       });
     }
     return (

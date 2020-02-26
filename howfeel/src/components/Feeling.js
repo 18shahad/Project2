@@ -8,7 +8,9 @@ export default class Feeling extends React.Component {
           feeling: [],
           newItem: '',
           fav: [],
-          show: 'all'
+          checkedList: [],
+          show: 'all',
+          checked: false
                 };
     
       }
@@ -46,6 +48,7 @@ export default class Feeling extends React.Component {
         show: 'fav'
       })
   }
+
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   editFunc = (index) => {
@@ -95,9 +98,7 @@ export default class Feeling extends React.Component {
         <div className='scrollable' id='list'>
         <button onClick={()=>this.showAll()} id='show'> Show All </button>
         <button onClick={()=>this.showFav()} id='fav'> Favorite </button>
-        <Items feelingList={this.state.feeling} favList={this.state.fav} show={this.state.show} editFunc={this.editFunc} delFunc={this.delFunc} favFunc={this.favFunc}/>
-            {/* <!-- HAVE TIME AND WHAT THE USER WRITE -->
-            <!-- AND EDITE DEL AND FAV BUTTONS --> */}
+        <Items feelingList={this.state.feeling} favList={this.state.fav} show={this.state.show} checkedList={this.state.checkedList} editFunc={this.editFunc} delFunc={this.delFunc} favFunc={this.favFunc}/>
 
         </div> 
         <button onClick={()=>this.clear()}> Clear All! </button>

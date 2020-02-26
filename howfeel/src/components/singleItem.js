@@ -1,12 +1,6 @@
 import React from 'react';
 export default class singleItem extends React.Component {
-
-
-
-
   render() {
-
-
 
     //ICONS
     let edit = <button onClick={()=> this.props.editFunc(this.props.index, edit, fav, remove)} className='btn'><span className="glyphicon glyphicon-edit"></span></button>;
@@ -16,7 +10,8 @@ export default class singleItem extends React.Component {
     let newID = this.props.index + 's';
     return (
       <div id={this.props.index}>
-        <p><strong id={newID}>{this.props.newFeel}</strong></p> 
+        <p><input type="checkbox" id={this.props.index} name="feeling" value="feel" />
+                <strong id={newID}>{this.props.newFeel}</strong></p> 
         {fav}  {edit}   {remove} 
         <hr/>
      </div>
