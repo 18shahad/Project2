@@ -6,7 +6,9 @@ export default class Quotes extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          quoteList: []
+          quoteList: [],
+          quoteText: '',
+          quoteAuthor: ''
                 };
     
       }
@@ -22,10 +24,10 @@ export default class Quotes extends React.Component {
         axios({ method: 'get', url:url3 })
         .then(res => {
           console.log(res);
-          const quoteAuthor = res.data.quoteAuthor;
-          const quoteText = res.data.quoteText;
-          document.getElementById('qContainer').innerHTML += '<p>' + quoteText + '</p> <p>' + quoteAuthor+'</p> ';
-            
+          this.setState({
+            quoteAuthor: res.data.quoteAuthor,
+            quoteText: res.data.quoteText
+          });            
       
         })
         .catch(err => {
@@ -39,15 +41,15 @@ export default class Quotes extends React.Component {
 
     return (
         <div id='right'>
-        <h3>Quotes!</h3>
-        <button onClick={() => this.getQuote()}> More Quotes </button>
+        <h3><strong>Today's Quote!</strong></h3>
+        {/* <button onClick={() => this.getQuote()}> More Quotes </button> */}
 
       <div className='scrollable' id='qContainer'> 
 
-            {/* <!-- SHOULD HAVE 2 SECTIONS ALL AND FAV--> */}
-            {/* <!--  FAV BUTTONS --> */}
+            <strong>{this.state.quoteText}</strong>
+            <p>" {this.state.quoteAuthor} "</p>
       </div>
-
+        <img src={require('../components/feels.png')} alt='feeling'/>
 
 
     </div>
